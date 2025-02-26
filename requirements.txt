@@ -1,6 +1,6 @@
 # Requirements
-1. pandas
-2. numpy
-3. matplotlib
-4. scikit-learn
+pandas
+numpy
+matplotlib
+scikit-learn
 
