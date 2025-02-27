@@ -11,7 +11,7 @@ def recommend_crop(temperature, rainfall, soil_type, altitude):
     if 15 <= temperature <= 25:
         recommendations.append("Potatoes")
     if temperature > 30:
-        recommendations.append("Sorghum")
+        recommendations.append("Sorg:")
 
     # Rainfall-based recommendations
     if 600 <= rainfall <= 1200:
@@ -55,3 +55,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
