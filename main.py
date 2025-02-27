@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS  # Allow Binder access
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for Binder access
 
 def recommend_crop(temperature, rainfall, soil_type, altitude):
     recommendations = []
@@ -11,7 +13,7 @@ def recommend_crop(temperature, rainfall, soil_type, altitude):
     if 15 <= temperature <= 25:
         recommendations.append("Potatoes")
     if temperature > 30:
-        recommendations.append("Sorg:")
+        recommendations.append("Sorghum")  # Fixed typo
 
     # Rainfall-based recommendations
     if 600 <= rainfall <= 1200:
@@ -54,4 +56,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run
+
