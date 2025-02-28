@@ -1,7 +1,8 @@
-from colorama import init, Fore, Style
+from flask import Flask, render_template, request
+from flask_cors import CORS  # Allow Binder access
 
-# Initialize Colorama
-init(autoreset=True)
+app = Flask(__name__)
+CORS(app)  # Enable CORS for Binder access
 
 def recommend_crop(temperature, rainfall, soil_type, altitude):
     recommendations = []
@@ -12,7 +13,7 @@ def recommend_crop(temperature, rainfall, soil_type, altitude):
     if 15 <= temperature <= 25:
         recommendations.append("Potatoes")
     if temperature > 30:
-        recommendations.append("Sorghum")
+        recommendations.append("Sorghum")  # Fixed typo
 
     # Rainfall-based recommendations
     if 600 <= rainfall <= 1200:
@@ -40,22 +41,20 @@ def recommend_crop(temperature, rainfall, soil_type, altitude):
     
     return recommendations if recommendations else ["No suitable crop found"]
 
-def get_input():
-    try:
-        temperature = float(input("Enter the temperature (°C): "))
-        rainfall = float(input("Enter the annual rainfall (mm): "))
-        soil_type = input("Enter the soil type (loamy/clayey/sandy): ")
-        altitude = float(input("Enter the altitude (meters): "))
-        
-        recommendations = recommend_crop(temperature, rainfall, soil_type, altitude)
-        
-        # Design the output with color and style
-        print(Fore.GREEN + "\nRecommended crops based on the input:")
-        for crop in recommendations:
-            print(Fore.CYAN + f"- {crop}")
-        
-    except ValueError:
-        print(Fore.RED + "Please enter valid numeric values for temperature, rainfall, and altitude.")
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        try:
+            temperature = float(request.form['temperature'])
+            rainfall = float(request.form['rainfall'])
+            soil_type = request.form['soil_type']
+            altitude = float(request.form['altitude'])
+            recommendations = recommend_crop(temperature, rainfall, soil_type, altitude)
+            return render_template('index.html', recommendations=recommendations)
+        except ValueError:
+            return render_template('index.html', error="Please enter valid numeric values.")
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    get_input()
+app.run(host="0.0.0.0", port=5000, debug=True)
+
