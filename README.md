@@ -47,7 +47,7 @@ This expert system provides recommendations for suitable crops based on climate 
 
 ### Running on Binder
 Click the Binder link to open the web app directly:
-[![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Masonga-Dev/AI_Group4_ExpertSystem_Assignment2/main?urlpath=proxy/5000/)
+[![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Masonga-Dev/AI_Group4_ExpertSystem_Assignment2/main)
 
 ### GitHub Pages (Documentation)
 The project documentation is available at:
@@ -71,6 +71,6 @@ This project is open-source and available under the [MIT License](LICENSE).
 Special thanks to our instructors and mentors for their guidance in developing this expert system.
 
 
-🚀 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Masonga-Dev/AI_Group4_ExpertSystem_Assignment2/main?urlpath=proxy/5000/)
+🚀 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Masonga-Dev/AI_Group4_ExpertSystem_Assignment2/main)
 
 >>>>>>> fdabea712faea57d5325a4904058baca0b376a72
