@@ -48,7 +48,7 @@ Click the Binder link to open the web app directly:
 
 ### GitHub Pages (Documentation)
 The project documentation is available at:
-**[GitHub Pages Link](#)** *(Insert GitHub Pages link here)*
+**[GitHub Pages Link](#)** *(https://github.com/Masonga-Dev/AI_Group4_ExpertSystem_Assignment2.git)*
 
 ## System Architecture
 - **Frontend**: HTML, CSS (Basic UI for inputs and results)
